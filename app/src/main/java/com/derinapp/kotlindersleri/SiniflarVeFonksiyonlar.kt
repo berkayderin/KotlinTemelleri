@@ -28,3 +28,6 @@ fun toplamaIslemi(sayi1: Int, sayi2: Int): Int { // buradan dönen sonuç: Int
     return sayi1 + sayi2
 }
 
+fun testFonksiyonu() {
+    val x = 10 // x değişkeni sadece bu fonksiyon içinde geçerlidir
+}
