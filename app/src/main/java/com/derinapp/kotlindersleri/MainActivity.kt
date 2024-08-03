@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /*
         // Superkahraman sınıfından bir nesne oluşturuyoruz.
         var superman = Superkahraman("Superman", 30, "Gazeteci")
         println("Superman'ın mesleği: ${superman.meslek}")
@@ -44,5 +45,49 @@ class MainActivity : AppCompatActivity() {
             println("Kullanıcı yaşını yazdırıyoruz: $it")
         }
 
+         */
+
+
+        // Encapsulation (Kapsülleme)
+        var atil = Sanatci("Atil", 30, "Gitar")
+        println("Sanatçının ismi: ${atil.isim}")
+        atil.isim = "Atil Samancioglu"
+        println("Sanatçının ismi: ${atil.isim}")
+
+        atil.sarkiSoyle()
+        atil.sacRengi = "Siyah"
+        atil.turuYazdir()
+
+        println(atil.yas)
+
+        // Inheritance (Kalıtım)
+        val kahraman = Kahraman("Atil", "Uçmak")
+        kahraman.kos()
+
+        val muhtesemKahraman = MuhtesemKahraman("batman", "zengin olmak")
+        muhtesemKahraman.kos()
+        println(muhtesemKahraman.isim)
+
+        // Polymorphism (Çok biçimlilik)
+
+        // static polymorphism
+        val islemler = Islemler()
+        println(islemler.cikarma(5, 3))
+        println(islemler.cikarma(5, 3, 2))
+
+        // dynamic polymorphism
+        val kedi = Hayvan()
+        val kopek = Kopek()
+        val ornekDizi = arrayOf(kedi, kopek)
+        ornekDizi.forEach { hayvan ->
+            hayvan.sesCikar()
+        }
+
+
+        // Abstraction (Soyutlama)
+        // Abstract class ve interface
+
+        //val insan = Insan() // abstract class'tan nesne oluşturamayız
     }
+
 }
